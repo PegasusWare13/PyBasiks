@@ -6,3 +6,6 @@ print(type(tuple2), len(tuple2))
 
 tuple3 = ("Alexander")
 print(type(tuple3))
+
+tuple4 = tuple(("Emperor", "Napoleon"))
+print(tuple4)
