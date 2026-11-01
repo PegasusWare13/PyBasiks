@@ -1,0 +1,1 @@
+I mean it's nothing special, is it? I will just write some new stuff like what value of strings correspond to boolean true or false in python and shorthand if else.
