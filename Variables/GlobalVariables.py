@@ -1,4 +1,5 @@
 globalVar = "Global"
+localVar = "121212"
 def userDefFunction():
     globalVar = "Local"
     print(globalVar)
@@ -8,11 +9,14 @@ print(globalVar)
 userDefFunction()   
 print(localVar)
 print() 
-#To change globalVar value, we use global keyword inside the function
-globalVar2 = "Global 2"
-def userDefFunction2():
-    global globalVar2
-    globalVar2 = "Modified Global 2"
-    print(globalVar2)
-print(globalVar2)
-userDefFunction2()
+
+#nonlocal keyword
+print()
+def parent():
+    x = "parent"
+    def child():
+        nonlocal x
+        x = 'child'
+        print(x)
+    child()
+parent()
