@@ -15,11 +15,11 @@ def mySwapper(n):
             return inner
     return mySwapper
 def overrated(function):
-    def inner():
-        function() + "is overrated asf"
+    def inner(dnf): #apparently it was cause I didn't send the argument 'dnf' over to inner()
+        return function(dnf) + " is overrated asf"
     return inner
 @mySwapper(0)
-#@overrated #doesn't work with @overrated yet. Maybe it's cause of mySwapper() taking an argument? Seems so. I will try to fix this later when I know more about decorators and stuff
+@overrated #fixed #doesn't work with @overrated yet. Maybe it's cause of mySwapper() taking an argument? Seems so. I will try to fix this later when I know more about decorators and stuff
 def Leclerc(dnf):
     return "Red Stroll DNF No. "+ dnf
 print(Leclerc('six'))

@@ -5,7 +5,7 @@ def mySwapper(function1):
 @mySwapper
 def HelloWorld():
     return "HeLLo woRLD"
-print(HelloWorld.__name__) #use double underscores
+print(HelloWorld.__name__) #use double underscores 'dunder'
 
 import functools
 def mySwapper(function1):
@@ -16,4 +16,4 @@ def mySwapper(function1):
 @mySwapper
 def HelloWorld():
     return "HeLLo woRLD"
-print(HelloWorld.__name__) #use double underscores
+print(HelloWorld.__name__) 
