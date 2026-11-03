@@ -6,4 +6,6 @@ print(z.SccuderriaFerrari["Driver_1"])
 from mymodule import SccuderriaFerrari as SF
 print(SF["Driver_2"])
 
-
+import platform
+a = platform.system()
+print(a)
