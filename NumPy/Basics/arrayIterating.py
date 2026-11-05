@@ -9,5 +9,8 @@ else: print()
 for x in np.nditer(arr1[:,:,::2]):
     print(x,end=" ")
 else: print()
+for x in np.nditer(arr1[:,:,::2],flags=['buffered'],op_dtypes='S'):
+    print(x,end=" ")
+else: print("\n\n")
 for x in np.ndenumerate(arr1):
     print(x)
