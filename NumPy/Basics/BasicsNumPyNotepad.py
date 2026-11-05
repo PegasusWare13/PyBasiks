@@ -52,3 +52,14 @@ arr7[0]= 3
 print(f"In arr7, changed arr7[0] from 33 to 3")
 print(f"viewArr7 = {viewArr7}, base = {viewArr7.base}") #it's kinda like reference variables in c++
 print(f"copyOfArr7 = {copyOfArr7}, base = {copyOfArr7.base}")
+
+#reshape
+arr8 = np.array([1,2,3,4,5,6,7,8,9,10])
+print(f"arr8 = {arr8}")
+newArr8 = arr8.reshape(5,2)
+print(f"newArr8 = \n{newArr8}")
+newArr8 = arr8.reshape(-1) #flatenning array
+print(f"flatenned newArr8 = {newArr8}")
+newArr8 = arr8.reshape(5,2,-1)
+print(f"newArr8 = \n{newArr8}\n\n\n")
+
