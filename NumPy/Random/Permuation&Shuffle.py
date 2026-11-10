@@ -1,5 +1,4 @@
-import numpy as np
-from numpy import random as r
+import numpy.random as r
 
 #Permutation
 print("Permuation: ")
