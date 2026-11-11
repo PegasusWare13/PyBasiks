@@ -11,7 +11,7 @@ import seaborn as sb
 lowStdDev = {
     "NormalDistribution" : random.normal(size=(50)), #scale (standard Deviation) = 0 by default
     "LogisticDistribution" : random.logistic(size=(50))
-}
+}#Have to pass use 1D array when passing to seaborn through a dictionary
 HighStdDev = {
     "NormalDistribution" : random.normal(scale = 12, size=(50)), #scale (standard Deviation) = 0 by default
     "LogisticDistribution" : random.logistic(scale = 12,size=(50))
