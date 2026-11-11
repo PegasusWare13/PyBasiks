@@ -8,13 +8,14 @@ import matplotlib.pyplot as plt
 import seaborn as sb
 
 #Paramaters: loc, scale, size. Same as Normal Distribution
+size_=random.randint(1000,5000)
 lowStdDev = {
-    "NormalDistribution" : random.normal(size=(50)), #scale (standard Deviation) = 0 by default
-    "LogisticDistribution" : random.logistic(size=(50))
+    "NormalDistribution" : random.normal(size=(size_)), #scale (standard Deviation) = 0 by default
+    "LogisticDistribution" : random.logistic(size=(size_))
 }#Have to pass use 1D array when passing to seaborn through a dictionary
 HighStdDev = {
-    "HighStd_NormalDistribution" : random.normal(scale = 12, size=(50)), #scale (standard Deviation) = 0 by default
-    "LowStd_LogisticDistribution" : random.logistic(scale = 12,size=(50))
+    "HighStd_NormalDistribution" : random.normal(scale = 12, size=(size_)), #scale (standard Deviation) = 0 by default
+    "LowStd_LogisticDistribution" : random.logistic(scale = 12,size=(size_))
 }
 sb.displot(lowStdDev, kind='kde')
 sb.displot(HighStdDev, kind='kde')
