@@ -13,10 +13,9 @@ lowStdDev = {
     "LogisticDistribution" : random.logistic(size=(50))
 }#Have to pass use 1D array when passing to seaborn through a dictionary
 HighStdDev = {
-    "NormalDistribution" : random.normal(scale = 12, size=(50)), #scale (standard Deviation) = 0 by default
-    "LogisticDistribution" : random.logistic(scale = 12,size=(50))
+    "HighStd_NormalDistribution" : random.normal(scale = 12, size=(50)), #scale (standard Deviation) = 0 by default
+    "LowStd_LogisticDistribution" : random.logistic(scale = 12,size=(50))
 }
 sb.displot(lowStdDev, kind='kde')
-plt.show()
 sb.displot(HighStdDev, kind='kde')
 plt.show()
