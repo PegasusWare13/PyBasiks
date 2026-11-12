@@ -40,7 +40,7 @@ print(pd.__version__)
 x = pd.DataFrame(RedBull)
 print(x,"\n")
 print(x.loc[1],"\n") #So each DataSet is its own row. 
-print(x.loc[[0,1]],"\n\n\n") #[] returns a DatFrame
+print(x.loc[[0,1]],"\n\n\n") #[] returns a DataFrame containing rows 0 and 1 and all columns. For columns, we would've had to specify with the Column name like 'Drivers', 'Titles', etc
 
 
 #Indexed DataFrames
