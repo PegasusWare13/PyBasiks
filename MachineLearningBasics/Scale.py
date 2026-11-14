@@ -15,15 +15,27 @@ regression_Object = linear_model.LinearRegression()
 y_series = dataframe_['CO2'] #1-D Series
 x_df = dataframe_[['Volume', 'Weight']] #2-D Dataframe
 ScaledX = scale.fit_transform(x_df) #scales Weight and Volume relative to each other
-print("Scaled Values:\n",ScaledX,"\n")
-
+print("Scaled Values:\n",ScaledX,"\n") #fit_transform() returns a NumPy array
 regression_Object.fit(ScaledX, y_series)
 print(f"Regression Coefficients: {regression_Object.coef_}")
 
-#FRANKENSTEIN MONSTER OF A CODE
+#FRANKENSTEIN's MONSTER OF A CODE
+print("\nPredicting With Scaling")
 randomVolume = random.uniform(low=0.6, high=2.2, size=1)
 randomWeight = random.randint(80,130)
-scaledRandoms = scale.transform([[randomVolume[0], randomWeight]])
-input_df = pd.DataFrame(scaledRandoms, columns=['Volume', 'Weight']) 
-predictedCO2 = regression_Object.predict(input_df)
-print(f"When randomVolume = {randomVolume} and randomWeight = {randomWeight}, predictedCO2 = {predictedCO2}")
+input_df = pd.DataFrame([[randomVolume[0], randomWeight]], columns=['Volume', 'Weight']) 
+scaledInput_df = scale.transform(input_df) #I had previously fed scaledValues to the input_df but it created this error where sklearn doesn't recognized these new names since the algorithm had previously learnt the fixed names 'Volume' and 'Weight'. Same old error: X has feature names, but LinearRegression was fitted without feature nameswarnings.warn(
+predictedCO2 = regression_Object.predict(scaledInput_df)
+print(f"When randomVolume = {randomVolume[0]} and randomWeight = {randomWeight}, predictedCO2 = {predictedCO2}")
+
+print("\nPrediction Without Scaling:")
+arr = input_df.to_numpy() #converting to numpyArray which is what our model will accept without rasing an error
+predictedCO2 = regression_Object.predict(arr)
+print(f"When randomVolume = {randomVolume[0]} and randomWeight = {randomWeight}, predictedCO2 = {predictedCO2}")
+
+#THIS raises an error because the prediction Objection fitted/trained on a numPy array when he passed ScaledX into .fit() and hence, .predict() expects a NumPy array but we are sending a DataFrame
+# print("\nPrediction Without Scaling:")
+# predictedCO2 = regression_Object.predict(input_df)
+# print(f"When randomVolume = {randomVolume[0]} and randomWeight = {randomWeight}, predictedCO2 = {predictedCO2}")
+
+
